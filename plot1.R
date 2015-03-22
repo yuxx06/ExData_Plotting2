@@ -1,0 +1,5 @@
+source("data.R")
+aggEmission <- aggregate(Emissions ~ year,NEI, sum)
+png('plot1.png', width=480, height=480)
+plot(aggEmission$year, aggEmission$Emissions,type = "l", xlab = "Year", ylab = "Emissions", main = "Total Emissions from PM2.5 in US")
+dev.off()
